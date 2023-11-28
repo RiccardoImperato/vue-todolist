@@ -15,15 +15,16 @@
 <body>
     <div id="app">
         <main>
-            <h1 class="text-center my-4">Veu To Do list</h1>
+            <h1 class="text-center my-4">Vue To Do List</h1>
             <div class="container row justify-content-center mx-auto">
-                <div class="col col-7">
+                <div class="col-md-7">
+
                     <ul class="list-group">
-                        <li class="list-group-item d-flex justify-content-between" v-for="(task, index) in toDos">
-                            <span :class="task.done === true ? 'text-decoration-line-through' : ''">
-                                {{ task.task }}
+                        <li class="list-group-item d-flex justify-content-between" v-for="(todo, index) in toDos">
+                            <span :class="todo.done === true ? 'text-decoration-line-through' : ''">
+                                {{ todo.task }}
                             </span>
-                            <span>&cross;</span>
+                            <span class="text-danger" role="button" @click="deleteTask()">&cross;</span>
                         </li>
                     </ul>
                 </div>
