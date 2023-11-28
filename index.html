@@ -20,9 +20,10 @@
                 <div class="col-md-7">
                     <div class="input-group mb-3">
                         <input type="text" class="form-control" placeholder="Inserisci attività" id="new-task">
-                        <button class="btn btn-primary" type="button" id="button-addon2">Aggiungi</button>
+                        <button class="btn btn-primary" type="button" id="button-addon2"
+                            @click="addTask()">Aggiungi</button>
                     </div>
-                    <ul class="list-group">
+                    <ul class="list-group" v-if="toDos.length !== 0">
                         <li class="list-group-item" v-for="(todo, index) in toDos">
                             <div class="d-flex justify-content-between">
                                 <span :class="todo.done === true ? 'text-decoration-line-through' : ''">
@@ -32,6 +33,9 @@
                             </div>
                         </li>
                     </ul>
+                    <div class="alert alert-primary text-center mx-auto w-50" role="alert" v-else>
+                        Nessuna attività presente
+                    </div>
                 </div>
             </div>
         </main>

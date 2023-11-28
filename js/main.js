@@ -42,16 +42,21 @@ const toDos = [
 ];
 
 createApp({
+
+
     data() {
         return {
             toDos,
-            currentIndex: 0
+            currentIndex: 0,
         }
     },
     methods: {
         deleteTask(index) {
             this.currentIndex = index;
             this.toDos.splice(index, 1);
+        },
+        addTask() {
+            console.log('add');
         }
     }
 }).mount('#app');
