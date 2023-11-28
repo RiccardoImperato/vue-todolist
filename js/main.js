@@ -45,11 +45,13 @@ createApp({
     data() {
         return {
             toDos,
+            currentIndex: 0
         }
     },
     methods: {
-        deleteTask() {
-            this.toDos.splice(0, 1);
+        deleteTask(index) {
+            this.currentIndex = index;
+            this.toDos.splice(index, 1);
         }
     }
 }).mount('#app');

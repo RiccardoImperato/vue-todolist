@@ -18,13 +18,18 @@
             <h1 class="text-center my-4">Vue To Do List</h1>
             <div class="container row justify-content-center mx-auto">
                 <div class="col-md-7">
-
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Inserisci attività" id="new-task">
+                        <button class="btn btn-primary" type="button" id="button-addon2">Aggiungi</button>
+                    </div>
                     <ul class="list-group">
-                        <li class="list-group-item d-flex justify-content-between" v-for="(todo, index) in toDos">
-                            <span :class="todo.done === true ? 'text-decoration-line-through' : ''">
-                                {{ todo.task }}
-                            </span>
-                            <span class="text-danger" role="button" @click="deleteTask()">&cross;</span>
+                        <li class="list-group-item" v-for="(todo, index) in toDos">
+                            <div class="d-flex justify-content-between">
+                                <span :class="todo.done === true ? 'text-decoration-line-through' : ''">
+                                    {{ todo.task }}
+                                </span>
+                                <span class="text-danger" role="button" @click="deleteTask(index)">&cross;</span>
+                            </div>
                         </li>
                     </ul>
                 </div>
