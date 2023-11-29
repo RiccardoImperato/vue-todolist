@@ -19,7 +19,8 @@
             <div class="container row justify-content-center mx-auto">
                 <div class="col-md-7">
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Inserisci attività" id="new-task">
+                        <input v-model="newTask" type="text" class="form-control" placeholder="Inserisci attività"
+                            id="new-task">
                         <button class="btn btn-primary" type="button" id="button-addon2"
                             @click="addTask()">Aggiungi</button>
                     </div>

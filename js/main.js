@@ -48,6 +48,7 @@ createApp({
         return {
             toDos,
             currentIndex: 0,
+            newTask: null
         }
     },
     methods: {
@@ -56,7 +57,10 @@ createApp({
             this.toDos.splice(index, 1);
         },
         addTask() {
-            console.log('add');
+            if (this.newTask !== null) {
+                this.toDos.push({ task: this.newTask, done: false });
+                console.log(this.newTask);
+            };
         }
     }
 }).mount('#app');
