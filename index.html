@@ -20,12 +20,13 @@
                 <div class="col-md-7">
                     <div class="input-group mb-3">
                         <input v-model="newTask" type="text" class="form-control" placeholder="Inserisci attività"
-                            id="new-task">
+                            id="new-task" @keyup.enter="addTask()">
                         <button class="btn btn-primary" type="button" id="button-addon2"
                             @click="addTask()">Aggiungi</button>
                     </div>
                     <ul class="list-group" v-if="toDos.length !== 0">
-                        <li class="list-group-item" v-for="(todo, index) in toDos">
+                        <li class="list-group-item" v-for="(todo, index) in toDos" @click="doneUndone(index)"
+                            role="button">
                             <div class="d-flex justify-content-between">
                                 <span :class="todo.done === true ? 'text-decoration-line-through' : ''">
                                     {{ todo.task }}
