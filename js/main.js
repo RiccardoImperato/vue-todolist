@@ -39,10 +39,11 @@ createApp({
             this.toDos.splice(index, 1);
         },
         addTask() {
-            if (this.newTask !== null) {
+            if (this.newTask.trim !== null) {
                 this.toDos.push({ task: this.newTask, done: false });
                 console.log(this.newTask);
             };
+            this.newTask = null;
         },
         doneUndone(index) {
             this.toDos[index].done = !this.toDos[index].done;
